@@ -4,41 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modern Todo App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
     <link href="styles.css" rel="stylesheet">
 </head>
-<body class="bg-gradient-to-br from-indigo-100 to-purple-100 min-h-screen p-4 md:p-8">
+<body class="bg-gradient-to-br from-indigo-100 to-purple-100 min-h-screen p-4 md:p-8 font-poppins antialiased">
     <div class="container mx-auto max-w-2xl">
-        <h1 class="text-4xl font-bold mb-8 text-center text-indigo-600">✨ Todo App</h1>
+        <h1 class="text-4xl font-bold mb-8 text-center text-indigo-600 font-poppins tracking-tight">✨ Todo App</h1>
         
         <!-- Add Task Form -->
         <div class="bg-white rounded-xl p-6 shadow-lg mb-8">
             <form id="taskForm" class="space-y-4">
                 <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1" for="taskInput">Task Description</label>
+                    <label class="block text-base font-medium text-gray-700 mb-1.5 font-poppins tracking-wide" for="taskInput">Task Description</label>
                     <input type="text" id="taskInput" 
-                           class="w-full px-4 py-2 rounded-lg border border-gray-200 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all outline-none" 
+                           class="w-full px-4 py-2 rounded-lg border border-gray-200 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all outline-none font-poppins text-base" 
                            placeholder="What needs to be done?" required>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1" for="taskDate">Date</label>
+                        <label class="block text-base font-medium text-gray-700 mb-1.5 font-poppins tracking-wide" for="taskDate">Date</label>
                         <input type="date" id="taskDate" 
-                               class="w-full px-4 py-2 rounded-lg border border-gray-200 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all outline-none" 
+                               class="w-full px-4 py-2 rounded-lg border border-gray-200 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all outline-none font-poppins text-base" 
                                required>
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1" for="taskTime">Time</label>
+                        <label class="block text-base font-medium text-gray-700 mb-1.5 font-poppins tracking-wide" for="taskTime">Time</label>
                         <input type="time" id="taskTime" 
-                               class="w-full px-4 py-2 rounded-lg border border-gray-200 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all outline-none" 
+                               class="w-full px-4 py-2 rounded-lg border border-gray-200 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all outline-none font-poppins text-base" 
                                required>
                     </div>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1" for="taskStatus">Status</label>
+                        <label class="block text-base font-medium text-gray-700 mb-1.5 font-poppins tracking-wide" for="taskStatus">Status</label>
                         <select id="taskStatus" 
-                                class="w-full px-4 py-2 rounded-lg border border-gray-200 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all outline-none">
+                                class="w-full px-4 py-2 rounded-lg border border-gray-200 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all outline-none font-poppins text-base">
                             <option value="ongoing">On-going</option>
                             <option value="completed">Completed</option>
                             <option value="cancelled">Cancelled</option>
@@ -46,9 +58,9 @@
                         </select>
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1" for="taskCompletion">Completion (%)</label>
+                        <label class="block text-base font-medium text-gray-700 mb-1.5 font-poppins tracking-wide" for="taskCompletion">Completion (%)</label>
                         <input type="number" id="taskCompletion" 
-                               class="w-full px-4 py-2 rounded-lg border border-gray-200 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all outline-none"
+                               class="w-full px-4 py-2 rounded-lg border border-gray-200 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all outline-none font-poppins text-base"
                                min="0" max="100" value="0">
                     </div>
                 </div>
@@ -72,15 +84,15 @@
                 <div class="flex items-start space-x-4">
                     <input type="checkbox" class="task-checkbox mt-1.5 h-5 w-5 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
                     <div>
-                        <p class="task-text text-gray-800 font-medium"></p>
-                        <p class="task-datetime text-sm text-gray-500 mt-1"></p>
+                        <p class="task-text text-gray-800 font-medium font-poppins tracking-wide"></p>
+                        <p class="task-datetime text-sm text-gray-500 mt-1 font-poppins"></p>
                         <div class="flex items-center space-x-4 mt-2">
-                            <span class="task-status text-sm px-2 py-1 rounded-full"></span>
+                            <span class="task-status text-sm px-2 py-1 rounded-full font-poppins tracking-wide"></span>
                             <div class="flex items-center space-x-2">
                                 <div class="w-24 h-2 bg-gray-200 rounded-full">
                                     <div class="task-completion-bar h-2 bg-indigo-600 rounded-full"></div>
                                 </div>
-                                <span class="task-completion-text text-sm text-gray-600"></span>
+                                <span class="task-completion-text text-sm text-gray-600 font-poppins"></span>
                             </div>
                         </div>
                     </div>
@@ -107,34 +119,34 @@
     <!-- Edit Task Modal -->
     <div id="editTaskModal" class="fixed inset-0 bg-gray-600 bg-opacity-50 hidden items-center justify-center">
         <div class="bg-white rounded-xl p-6 shadow-lg w-full max-w-md mx-4">
-            <h2 class="text-2xl font-bold mb-4 text-gray-800">Edit Task</h2>
+            <h2 class="text-2xl font-bold mb-4 text-gray-800 font-poppins tracking-tight">Edit Task</h2>
             <form id="editTaskForm" class="space-y-4">
                 <input type="hidden" id="editTaskId">
                 <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1" for="editTaskInput">Task Description</label>
+                    <label class="block text-base font-medium text-gray-700 mb-1.5 font-poppins tracking-wide" for="editTaskInput">Task Description</label>
                     <input type="text" id="editTaskInput" 
-                           class="w-full px-4 py-2 rounded-lg border border-gray-200 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all outline-none" 
+                           class="w-full px-4 py-2 rounded-lg border border-gray-200 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all outline-none font-poppins text-base" 
                            required>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1" for="editTaskDate">Date</label>
+                        <label class="block text-base font-medium text-gray-700 mb-1.5 font-poppins tracking-wide" for="editTaskDate">Date</label>
                         <input type="date" id="editTaskDate" 
-                               class="w-full px-4 py-2 rounded-lg border border-gray-200 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all outline-none" 
+                               class="w-full px-4 py-2 rounded-lg border border-gray-200 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all outline-none font-poppins text-base" 
                                required>
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1" for="editTaskTime">Time</label>
+                        <label class="block text-base font-medium text-gray-700 mb-1.5 font-poppins tracking-wide" for="editTaskTime">Time</label>
                         <input type="time" id="editTaskTime" 
-                               class="w-full px-4 py-2 rounded-lg border border-gray-200 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all outline-none" 
+                               class="w-full px-4 py-2 rounded-lg border border-gray-200 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all outline-none font-poppins text-base" 
                                required>
                     </div>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1" for="editTaskStatus">Status</label>
+                        <label class="block text-base font-medium text-gray-700 mb-1.5 font-poppins tracking-wide" for="editTaskStatus">Status</label>
                         <select id="editTaskStatus" 
-                                class="w-full px-4 py-2 rounded-lg border border-gray-200 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all outline-none">
+                                class="w-full px-4 py-2 rounded-lg border border-gray-200 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all outline-none font-poppins text-base">
                             <option value="ongoing">On-going</option>
                             <option value="completed">Completed</option>
                             <option value="cancelled">Cancelled</option>
@@ -142,9 +154,9 @@
                         </select>
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1" for="editTaskCompletion">Completion (%)</label>
+                        <label class="block text-base font-medium text-gray-700 mb-1.5 font-poppins tracking-wide" for="editTaskCompletion">Completion (%)</label>
                         <input type="number" id="editTaskCompletion" 
-                               class="w-full px-4 py-2 rounded-lg border border-gray-200 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all outline-none"
+                               class="w-full px-4 py-2 rounded-lg border border-gray-200 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all outline-none font-poppins text-base"
                                min="0" max="100" value="0">
                     </div>
                 </div>
